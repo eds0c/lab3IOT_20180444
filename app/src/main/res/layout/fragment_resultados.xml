@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#56CCF2"
+    tools:context=".fragments.ResultadosFragment">
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/tv_resultados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Resultados de los Partidos"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Campo idLiga -->
+    <EditText
+        android:id="@+id/et_id_liga_resultados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_edittext"
+        android:hint="idLiga"
+        android:padding="12dp"
+        app:layout_constraintEnd_toStartOf="@id/et_temporada_resultados"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_resultados"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp" />
+
+    <!-- Campo temporada -->
+    <EditText
+        android:id="@+id/et_temporada_resultados"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_edittext"
+        android:hint="Season"
+        android:padding="12dp"
+        app:layout_constraintEnd_toStartOf="@id/et_ronda_resultados"
+        app:layout_constraintStart_toEndOf="@id/et_id_liga_resultados"
+        app:layout_constraintTop_toTopOf="@id/et_id_liga_resultados"
+        android:layout_marginEnd="8dp" />
+
+    <!-- Campo ronda -->
+    <EditText
+        android:id="@+id/et_ronda_resultados"
+        android:layout_width="94dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_edittext"
+        android:hint="Ronda"
+        android:padding="12dp"
+        app:layout_constraintEnd_toStartOf="@id/btn_buscar_resultados"
+        app:layout_constraintStart_toEndOf="@id/et_temporada_resultados"
+        app:layout_constraintTop_toTopOf="@id/et_id_liga_resultados"
+        android:layout_marginEnd="8dp" />
+
+    <!-- Botón de búsqueda -->
+    <Button
+        android:id="@+id/btn_buscar_resultados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:padding="12dp"
+        android:text="Buscar"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/et_ronda_resultados" />
+
+    <!-- RecyclerView para mostrar los resultados -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewResultados"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/btn_buscar_resultados"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/nav_buttons_resultados"
+        android:layout_marginTop="16dp" />
+
+    <!-- Botones de navegación -->
+    <LinearLayout
+        android:id="@+id/nav_buttons_resultados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
